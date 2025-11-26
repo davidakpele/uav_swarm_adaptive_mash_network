@@ -40,10 +40,10 @@ logs/
 *.log
 
 # Data
-data/results/
-*.csv
-*.h5
-*.pkl
+# data/results/
+# *.csv
+# *.h5
+# *.pkl
 
 # OS
 .DS_Store
