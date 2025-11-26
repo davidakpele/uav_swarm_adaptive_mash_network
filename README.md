@@ -1,9 +1,11 @@
-Here's an updated README that details all your achievements:
+Here's your updated README with images and better visual presentation:
 
 ```markdown
 # 🚀 UAV Swarm Adaptive Mesh Network Simulator
 
 A high-performance simulation framework for autonomous UAV swarm mesh networks with advanced anti-jamming capabilities and machine learning-driven adaptation.
+
+![Dashboard](https://github.com/davidakpele/uav_swarm_adaptive_mash_network/blob/v1/data/results/default_dashboard.png)
 
 ## 🎯 Key Achievements
 
@@ -32,13 +34,21 @@ A high-performance simulation framework for autonomous UAV swarm mesh networks w
 
 ## 🚀 Features
 
-- **Real-time mesh network topology management**
-- **Adaptive frequency hopping** and anti-jamming
-- **Multi-path routing** with link quality prediction
-- **GPU-accelerated computations** (CUDA support)
-- **3D visualization** and metrics dashboard
-- **Machine learning-based jammer classification**
-- **Multiple attack scenarios** (jamming, node failures, adaptive attacks)
+<div align="center">
+
+| 🛰️ Mesh Networking | 🎯 Anti-Jamming | 🤖 Machine Learning |
+|-------------------|-----------------|---------------------|
+| Real-time topology management | Adaptive frequency hopping | Jammer classification |
+| Multi-path routing | Jamming detection | Link quality prediction |
+| Network optimization | Power control | Pattern recognition |
+
+| 📊 Visualization | ⚡ Performance | 🔧 Configuration |
+|------------------|----------------|------------------|
+| 3D real-time view | GPU acceleration | YAML config files |
+| Metrics dashboard | High throughput | Custom scenarios |
+| Live monitoring | Low latency | Parameter tuning |
+
+</div>
 
 ## 🛠 Hardware Requirements
 
@@ -66,19 +76,19 @@ python main.py --help
 
 ## 🎮 Quick Start
 
-### Basic Simulation
+### 🎯 Basic Simulation
 ```bash
 # 60-second simulation with 50 UAVs
 python main.py
 ```
 
-### With Visualization
+### 👁️ With Visualization
 ```bash
 # Real-time 3D visualization
 python main.py --visualize --duration 30
 ```
 
-### Advanced Scenarios
+### ⚔️ Advanced Scenarios
 ```bash
 # Jamming attack scenario
 python main.py --scenario jamming --duration 60
@@ -92,16 +102,16 @@ python main.py --num-uavs 20 --duration 30 --visualize
 
 ## 📊 Performance Results
 
-### Default Scenario (50 UAVs)
+### ✅ Default Scenario (50 UAVs)
 ```
-✅ Connectivity: 100% maintained
-📊 Active Links: 348-349 (stable)
+🟢 Connectivity: 100% maintained
+📡 Active Links: 348-349 (stable)
 🔗 Network Diameter: 5 hops  
 📈 Throughput: 54,000+ Mbps
 🛡 Robustness: Algebraic Connectivity 770+
 ```
 
-### Adaptive Jamming Scenario
+### ⚡ Adaptive Jamming Scenario
 ```
 🎯 Smart jamming detection
 🔄 Adaptive frequency hopping  
@@ -114,33 +124,33 @@ python main.py --num-uavs 20 --duration 30 --visualize
 ```
 uav_swarm_mesh/
 ├── src/
-│   ├── core/                 # UAV entities & swarm management
+│   ├── core/                 # 🎯 UAV entities & swarm management
 │   │   ├── uav_node.py          # Individual UAV intelligence
 │   │   ├── swarm_manager.py     # Swarm coordination
 │   │   └── mesh_network.py      # Network topology management
-│   ├── communication/        # Networking & anti-jamming
+│   ├── communication/        # 📡 Networking & anti-jamming
 │   │   ├── frequency_hopping.py # Adaptive frequency selection
 │   │   ├── routing.py           # Multi-path routing algorithms
 │   │   ├── jamming_detector.py  # Jamming detection & classification
 │   │   └── signal_processing.py # RF signal simulation
-│   ├── physics/              # Movement & environment
+│   ├── physics/              # 🌍 Movement & environment
 │   │   ├── mobility_model.py    # UAV movement physics
 │   │   ├── propagation.py       # RF propagation models
 │   │   └── environment.py       # 3D environment simulation
-│   ├── optimization/         # Network optimization
+│   ├── optimization/         # ⚡ Network optimization
 │   │   ├── topology_optimizer.py # Connectivity optimization
 │   │   ├── spectrum_allocator.py # Frequency allocation
 │   │   └── path_planner.py      # Path planning algorithms
-│   ├── ml/                   # Machine learning
+│   ├── ml/                   # 🤖 Machine learning
 │   │   ├── jammer_classifier.py # ML-based jammer detection
 │   │   └── routing_predictor.py # Link quality prediction
-│   └── visualization/        # Monitoring & visualization
+│   └── visualization/        # 📊 Monitoring & visualization
 │       ├── realtime_viz.py      # 3D real-time visualization
 │       └── metrics_dashboard.py # Performance metrics dashboard
 ├── config/
-│   └── simulation_config.yaml   # Simulation parameters
-├── tests/                    # Unit & integration tests
-└── main.py                  # Main entry point
+│   └── simulation_config.yaml   # ⚙️ Simulation parameters
+├── tests/                    # 🧪 Unit & integration tests
+└── main.py                  # 🚀 Main entry point
 ```
 
 ## ⚙ Configuration
@@ -206,14 +216,26 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+<div align="center">
+
 **🚀 Ready for autonomous UAV swarm research and development!**
+
+![UAV Swarm](https://img.shields.io/badge/UAV-Swarm-blue)
+![Mesh Network](https://img.shields.io/badge/Mesh-Network-green)
+![Anti-Jamming](https://img.shields.io/badge/Anti--Jamming-Enabled-red)
+![Machine Learning](https://img.shields.io/badge/ML-Powered-orange)
+
+</div>
 ```
 
-This README now highlights:
-- ✅ **All the problems you solved** (connectivity issues, jammer overpowering)
-- ✅ **Performance achievements** (excellent metrics, stable network)
-- ✅ **Advanced features** (ML, anti-jamming, visualization)
-- ✅ **Easy-to-follow usage examples**
-- ✅ **Clear project structure and capabilities**
+## To add more images in the future:
 
-Your UAV swarm simulator is now production-ready with proven performance! 🎉
+1. **Add screenshots** of your 3D visualization:
+   ```markdown
+   ![3D Visualization](https://github.com/davidakpele/uav_swarm_adaptive_mash_network/raw/v1/docs/images/test1.png)
+   ```
+
+2. **Add performance charts**:
+   ```markdown
+   ![Performance](https://github.com/davidakpele/uav_swarm_adaptive_mash_network/blob/v1/data/results/test2.png)
+   ```
