@@ -58,15 +58,21 @@ class SwarmManager:
         logger.info(f"SwarmManager initialized with {self.num_uavs} UAVs")
     
     def _initialize_swarm(self):
-        """Initialize UAV positions and network"""
+        """Initialize UAV positions in a connected grid formation"""
         logger.info("Initializing swarm positions...")
         
-        # Create UAVs with random positions
+        # Use grid formation instead of random placement
+        grid_size = int(np.ceil(np.sqrt(self.num_uavs)))
+        spacing = min(self.area_size[0], self.area_size[1]) / (grid_size + 2)
+        
         for i in range(self.num_uavs):
+            row = i // grid_size
+            col = i % grid_size
+            
             position = Position3D(
-                x=np.random.uniform(0, self.area_size[0]),
-                y=np.random.uniform(0, self.area_size[1]),
-                z=np.random.uniform(100, self.area_size[2])
+                x=spacing * (col + 1),
+                y=spacing * (row + 1), 
+                z=np.random.uniform(150, 300)  # Keep reasonable altitude
             )
             
             node = UAVNode(
@@ -77,9 +83,7 @@ class SwarmManager:
                 max_speed=self.max_speed
             )
             
-            # Assign random initial frequency
             node.current_frequency = np.random.choice(self.available_frequencies)
-            
             self.network.add_node(node)
         
         # Build initial topology
@@ -87,13 +91,13 @@ class SwarmManager:
         
         metrics = self.network.get_network_metrics()
         logger.info(f"Initial network: {metrics['active_links']} links, "
-                   f"connected={metrics['connected']}")
+                f"connected={metrics['connected']}")
     
     def add_jammer(self, 
                    position: Position3D,
                    frequency: float,
-                   power: float = 40.0,
-                   jamming_range: float = 1000.0):
+                   power: float = 25.0,
+                   jamming_range: float = 400.0):
         """
         Add a jammer to the environment
         
@@ -160,17 +164,29 @@ class SwarmManager:
     
     def detect_and_respond_to_jamming(self):
         """Detect jamming and trigger countermeasures"""
+        jamming_detected_count = 0  # MOVE THIS LINE OUTSIDE THE LOOP
+        
         for node in self.network.nodes.values():
             if node.status == NodeStatus.FAILED:
                 continue
             
-            # Detect jamming
+            # Detect jamming with less sensitive threshold
             if node.detect_jamming(self.noise_floor):
-                # Hop to new frequency
-                node.hop_frequency(list(self.available_frequencies), 
-                                  self.time)
-                logger.debug(f"Node {node.node_id} hopped to "
-                           f"{node.current_frequency:.1f} MHz")
+                jamming_detected_count += 1
+                
+                # Only hop if we're consistently jammed (not just temporary)
+                if jamming_detected_count > 5:  # Require multiple detections
+                    # Hop to new frequency
+                    available_freqs = [f for f in self.available_frequencies 
+                                    if f != node.current_frequency]
+                    if available_freqs:
+                        node.hop_frequency(available_freqs, self.time)
+                        logger.debug(f"Node {node.node_id} hopped to "
+                                f"{node.current_frequency:.1f} MHz")
+        
+        # Log jamming activity
+        if jamming_detected_count > 0:
+            logger.debug(f"Jamming detected on {jamming_detected_count} nodes")
     
     def repair_network_topology(self):
         """
