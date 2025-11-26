@@ -5,7 +5,7 @@ Here's your updated README with images and better visual presentation:
 
 A high-performance simulation framework for autonomous UAV swarm mesh networks with advanced anti-jamming capabilities and machine learning-driven adaptation.
 
-![Dashboard](https://github.com/davidakpele/uav_swarm_adaptive_mash_network/blob/v1/data/results/default_dashboard.png)
+![Dashboard](./data/results/default_dashboard.png)
 
 ## 🎯 Key Achievements
 
@@ -232,10 +232,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 1. **Add screenshots** of your 3D visualization:
    ```markdown
-   ![3D Visualization](https://github.com/davidakpele/uav_swarm_adaptive_mash_network/raw/v1/docs/images/test1.png)
+   ![3D Visualization](./data/results/test1.png)
    ```
 
 2. **Add performance charts**:
    ```markdown
-   ![Performance](https://github.com/davidakpele/uav_swarm_adaptive_mash_network/blob/v1/data/results/test2.png)
+   ![Performance](./data/results/test2.png)
    ```
