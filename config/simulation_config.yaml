@@ -1,0 +1,36 @@
+simulation:
+  duration: 300  # seconds
+  timestep: 0.1  # seconds
+  random_seed: 42
+
+swarm:
+  num_uavs: 50
+  area_size: [2000, 2000, 500]  # x, y, z in meters
+  
+uav:
+  tx_power: 20.0  # dBm
+  comm_range: 500.0  # meters
+  max_speed: 20.0  # m/s
+  battery_capacity: 5000  # mAh (simulated)
+
+network:
+  frequency_band: [2400, 2480]  # MHz (ISM band)
+  num_channels: 80
+  bandwidth: 20  # MHz per channel
+  noise_floor: -90  # dBm
+
+jamming:
+  enabled: true
+  num_jammers: 3
+  jammer_power: 40.0  # dBm
+  jammer_range: 1000.0  # meters
+  adaptive: true  # Jammer learns and adapts
+
+scenarios:
+  node_failure_rate: 0.01  # probability per second
+  link_degradation: true
+
+visualization:
+  enabled: true
+  update_rate: 10  # Hz
+  save_frames: false
