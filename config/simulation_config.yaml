@@ -27,10 +27,92 @@ jamming:
   adaptive: true  # Jammer learns and adapts
 
 scenarios:
-  node_failure_rate: 0.01  # probability per second
+  node_failure_rate: 0.01  
   link_degradation: true
 
 visualization:
   enabled: true
   update_rate: 10  # Hz
   save_frames: false
+
+collective_intelligence:
+  enabled: true
+  behavior_weights:
+    cohesion: 1.0
+    separation: 1.5  
+    alignment: 0.8
+    exploration: 0.3
+    threat_response: 2.0
+  ranges:
+    cohesion: 200.0
+    alignment: 150.0
+    separation: 50.0
+
+logging:
+  level: INFO
+  log_to_file: true
+  log_file_path: logs/simulation.log  
+  metrics:
+    - connectivity
+    - latency
+    - packet_delivery_ratio
+    - energy_consumption
+  log_interval: 5  # seconds
+gpu_acceleration:
+  enabled: true
+  use_tensor_cores: false 
+  batch_size: 64
+  memory_limit_mb: 4096
+  preferred_gpu_id: 0
+  profiling: false
+  profiling_output_path: logs/gpu_profiling.json
+  warmup_iterations: 10
+  computation_precision: float32
+  fallback_to_cpu: false
+  monitor_gpu_usage: true
+  gpu_usage_log_interval: 10  # seconds
+  optimize_memory_allocation: true
+  custom_kernels: false
+  multi_gpu_support: false
+  gpu_selection_strategy: "highest_free_memory"  # Options: highest_free_memory, lowest_utilization
+  enable_tensor_cores: false
+  gpu_memory_pool_size_mb: 2048
+  asynchronous_computation: true
+  gpu_computation_timeout_ms: 5000
+  gpu_error_handling: true
+  gpu_performance_metrics: true
+  gpu_memory_debugging: false
+  gpu_computation_logging: false
+  gpu_resource_management: true
+  gpu_computation_batching: true
+  gpu_data_transfer_optimization: true
+  gpu_computation_profiling: false
+  gpu_computation_warmup: true
+  gpu_computation_precision: float16
+  gpu_fallback_strategy: "graceful"  # Options: graceful, immediate
+  gpu_monitoring_tool: "nvidia-smi"  # Options: nvidia-smi, custom
+  gpu_usage_alert_threshold: 90  # percentage
+  gpu_memory_usage_alert_threshold: 90  # percentage
+  gpu_computation_error_log_path: logs/gpu_errors.log
+  gpu_performance_log_path: logs/gpu_performance.log  
+  gpu_memory_debug_log_path: logs/gpu_memory_debug.log
+  gpu_computation_log_path: logs/gpu_computation.log
+  gpu_resource_management_log_path: logs/gpu_resource_management.log
+  gpu_data_transfer_log_path: logs/gpu_data_transfer.log
+  gpu_computation_profiling_log_path: logs/gpu_computation_profiling.log
+  gpu_computation_warmup_log_path: logs/gpu_computation_warmup.log
+  gpu_computation_precision_log_path: logs/gpu_computation_precision.log
+  gpu_fallback_log_path: logs/gpu_fallback.log
+  gpu_monitoring_log_path: logs/gpu_monitoring.log
+  gpu_selection_log_path: logs/gpu_selection.log
+  gpu_optimization_log_path: logs/gpu_optimization.log
+  gpu_tensor_cores_log_path: logs/gpu_tensor_cores.log
+  gpu_multi_gpu_log_path: logs/gpu_multi_gpu.log
+  gpu_batching_log_path: logs/gpu_batching.log
+  gpu_timeout_log_path: logs/gpu_timeout.log
+  gpu_error_handling_log_path: logs/gpu_error_handling.log
+  gpu_performance_metrics_log_path: logs/gpu_performance_metrics.log
+  gpu_memory_debugging_log_path: logs/gpu_memory_debugging.log
+  gpu_computation_logging_log_path: logs/gpu_computation_logging.log
+  gpu_data_transfer_optimization_log_path: logs/gpu_data_transfer_optimization.log
+  

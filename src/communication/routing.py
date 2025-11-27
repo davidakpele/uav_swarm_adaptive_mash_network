@@ -109,7 +109,7 @@ class MultiPathRouter:
         best_quality = -np.inf
         
         for path in paths:
-            # Calculate path quality (sum of link qualities)
+            # Calculate path quality 
             quality = 0.0
             valid = True
             

@@ -79,14 +79,15 @@ class RealtimeVisualizer:
                     c=colors, s=sizes, marker='o', alpha=0.8, edgecolors='black'
                 )
             
-            # Plot communication links
+            # Plot communication links - FIXED: neighbors is now a set, not dict
             for node in swarm.network.nodes.values():
-                for neighbor_id, link in node.neighbors.items():
+                for neighbor_id in node.neighbors:  # Changed from .items()
                     if neighbor_id in swarm.network.nodes:
                         neighbor = swarm.network.nodes[neighbor_id]
                         
-                        # Color by link quality
-                        if link.is_viable():
+                        # Simple link visualization (we don't have link objects anymore)
+                        # Use network topology to determine if link is active
+                        if swarm.network.topology.has_edge(node.node_id, neighbor_id):
                             line_color = 'blue'
                             line_alpha = 0.3
                             line_width = 0.5

@@ -165,7 +165,7 @@ def run_scenario(swarm: SwarmManager,
                         viz.update(swarm)
                     except Exception as e:
                         logger.warning(f"Visualization error: {e}")
-                        viz = None  # Disable if it keeps failing
+                        viz = None  
                 
                 if dashboard is not None:
                     dashboard.update(stats)
@@ -215,7 +215,6 @@ def setup_jamming_scenario(swarm: SwarmManager):
     """Setup jamming attack scenario"""
     logger.info("Setting up jamming scenario...")
     
-    # Add 3 jammers at strategic locations
     center_x = swarm.area_size[0] / 2
     center_y = swarm.area_size[1] / 2
     
@@ -253,7 +252,7 @@ def trigger_node_failures(swarm: SwarmManager, num_failures: int):
     if len(active_nodes) > num_failures:
         failed = np.random.choice(active_nodes, num_failures, replace=False)
         swarm.remove_nodes(failed.tolist())
-        logger.warning(f"💥 Node failures triggered: {failed.tolist()}")
+        logger.warning(f" Node failures triggered: {failed.tolist()}")
     else:
         logger.warning(f"Not enough active nodes for {num_failures} failures")
 
@@ -273,7 +272,7 @@ def adapt_jammer_strategy(swarm: SwarmManager):
         
         old_freq = swarm.jammers[0]['frequency']
         swarm.jammers[0]['frequency'] = target_freq
-        logger.info(f"🎯 Adaptive jammer: {old_freq:.1f} MHz → {target_freq:.1f} MHz")
+        logger.info(f" Adaptive jammer: {old_freq:.1f} MHz → {target_freq:.1f} MHz")
 
 
 def print_statistics(stats: dict):

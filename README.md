@@ -1,6 +1,6 @@
 Here's your updated README with images and better visual presentation:
 
-```markdown
+
 # 🚀 UAV Swarm Adaptive Mesh Network Simulator
 
 A high-performance simulation framework for autonomous UAV swarm mesh networks with advanced anti-jamming capabilities and machine learning-driven adaptation.
@@ -117,41 +117,7 @@ python main.py --num-uavs 20 --duration 30 --visualize
 🔄 Adaptive frequency hopping  
 📡 ML-based jammer classification
 ⚡ Real-time countermeasures
-```
-
-## 🏗 Project Architecture
-
-```
-uav_swarm_mesh/
-├── src/
-│   ├── core/                 # 🎯 UAV entities & swarm management
-│   │   ├── uav_node.py          # Individual UAV intelligence
-│   │   ├── swarm_manager.py     # Swarm coordination
-│   │   └── mesh_network.py      # Network topology management
-│   ├── communication/        # 📡 Networking & anti-jamming
-│   │   ├── frequency_hopping.py # Adaptive frequency selection
-│   │   ├── routing.py           # Multi-path routing algorithms
-│   │   ├── jamming_detector.py  # Jamming detection & classification
-│   │   └── signal_processing.py # RF signal simulation
-│   ├── physics/              # 🌍 Movement & environment
-│   │   ├── mobility_model.py    # UAV movement physics
-│   │   ├── propagation.py       # RF propagation models
-│   │   └── environment.py       # 3D environment simulation
-│   ├── optimization/         # ⚡ Network optimization
-│   │   ├── topology_optimizer.py # Connectivity optimization
-│   │   ├── spectrum_allocator.py # Frequency allocation
-│   │   └── path_planner.py      # Path planning algorithms
-│   ├── ml/                   # 🤖 Machine learning
-│   │   ├── jammer_classifier.py # ML-based jammer detection
-│   │   └── routing_predictor.py # Link quality prediction
-│   └── visualization/        # 📊 Monitoring & visualization
-│       ├── realtime_viz.py      # 3D real-time visualization
-│       └── metrics_dashboard.py # Performance metrics dashboard
-├── config/
-│   └── simulation_config.yaml   # ⚙️ Simulation parameters
-├── tests/                    # 🧪 Unit & integration tests
-└── main.py                  # 🚀 Main entry point
-```
+``
 
 ## ⚙ Configuration
 
@@ -226,16 +192,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ![Machine Learning](https://img.shields.io/badge/ML-Powered-orange)
 
 </div>
-```
 
 ## To add more images in the future:
 
 1. **Add screenshots** of your 3D visualization:
-   ```markdown
    ![3D Visualization](./data/results/test1.png)
-   ```
 
 2. **Add performance charts**:
-   ```markdown
    ![Performance](./data/results/test2.png)
-   ```
